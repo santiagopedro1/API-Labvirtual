@@ -5,7 +5,7 @@ export default async (req, res) => {
 	const collection = client.db('DBLabvirtual').collection('teste')
 	try {
 		const dados = await collection.findOne({ nome: req.params.nome })
-		return res.json(dados)
+		return res.send(dados)
 	} catch (error) {
 		return res.json(error.message)
 	}
